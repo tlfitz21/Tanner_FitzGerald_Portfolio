@@ -7,12 +7,6 @@ This was my first program in python, and it prompts for an integer and a float,
 then outputs their sum, product, and quotient.
 
 ''' 
-# Program Description: 
-# First program in python to input two numbers, convert, and add 
-# and multiply/product them together, and then print the numbers, 
-# and their sum and product 
-# Due Date: [2/20/24]
-
 
 integer_prompt = input("Please enter an integer: ")   # Prompt and read a value
 float_prompt = input("Please enter a floating point number: ") # Prompt and read a value
