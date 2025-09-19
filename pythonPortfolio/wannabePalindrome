@@ -3,6 +3,10 @@ Tanner FitzGerald
 tlfhokie@vt.edu
 9/19/25
 
+This program will solve the "wannabe palindrome" problem. The goal is to identify that largest possible substring of a given sring that counts as a wannabe palindrome.
+a wannabe palindrome is like a normal palindrome, where the "word" reads the same forward as it does backwards, excpet it allows for 0 or 1 mismatches. 
+Mismatches can either be treated as a mitchmatch between both character, where both are not considered to count, or as a deletion, where one it would be a palindrome if just one character was removed
+
 I did not use LLMs to to help do this assignment
 
 '''
