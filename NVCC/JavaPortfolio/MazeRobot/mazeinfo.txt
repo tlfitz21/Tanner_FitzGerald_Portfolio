@@ -1,0 +1,31 @@
+Each 'x' is an open room, and each space is a wall
+
+Use a string with \n characters seperating each row for the first parameter
+
+the last 2 paramters are the starting position of the robot, which will usually be 0,0.
+
+maze1
+Robot robot = new Robot("xxx \n  x \n  xx", 0, 0); 
+
+
+maze2
+Robot robot = new Robot("xxxxx\n    x\n xxxx\n x   \n xxxx", 0, 0);
+
+maze3
+Robot robot = new Robot("xxxxx\n    x\nxxx x\nx xxx\nx    \nxxxxx", 0, 0);
+
+maze4
+Robot robot = new Robot("xxxx\nxx xxx\nx  x\nx xxxx", 0, 0); 
+
+maze5
+//Big maze:
+Robot robot = new Robot("xx xx  xxx\n"
+                +        "xx x    x \n"
+                +        "x   xxxxx \n"
+                +        "xx xx x xx\n"
+                +        " xxxx x x \n"
+                +        "     xxx x\n"
+                +        "xxxxx x xx\n"
+                +        "xxxxxxxxxx\n"
+                +        "xx    x   \n"
+                +        "x xxxxxxxx\n", 0, 0);

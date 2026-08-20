@@ -1,0 +1,152 @@
+<!--
+Tanner FitzGerald
+10/24/2025
+Homework WK 9 HTML table design: a table that meets the assignment specifications using html
+I have neither given nor recieved unauthorized assistance on this assignment
+
+During the preparation of this assignment, I used copilot for the 5th feature of the directions
+to help me understand how to the tbody tag to exclue the header for the hover feature. After using
+this tool, I reviewed and edited the content as needed to ensure its accuracy and take full responsibility
+for the content in relation to grading
+
+My proccess included setting up the file with the first two lines, then creating the basic table with its data.
+After that I started adding features between the style tags to change the behavior of the table one feature at a time.
+I did a lot of researching on w3schools.com to learn and refresh myself on how to use various html and css features.
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        table, th, td 
+            {
+                border : 1px solid black;
+                border-collapse: collapse;
+                
+            }
+        
+        th
+            {
+                position: sticky;
+                top : 0;
+                background-color: black;
+                color: white;
+                border: 3px solid black;
+                
+            }
+        td
+            {
+                text-align: center;
+            }
+
+        table
+            {
+                margin:auto;
+            }
+        
+            td:nth-child(3n) {font-weight: bold;}
+        tr:nth-child(3n) {background-color: rgba(133, 62, 180, 0.5);}
+        tr:nth-child(3n-1) {background-color: rgba(120, 119, 121, 0.5);}
+        
+        tbody tr:hover {background-color: rgb(62, 142, 180);}  /*Copilot told me how to preface tr:hover with tbody to exclude the header*/                
+       
+    </style>
+</head>
+
+
+
+<body>
+    <table>
+
+        <colgroup>
+            <col width="10%">
+            <col width="30%">
+            <col width="40%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Hobby</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Tanner</td>
+                <td>Hiking</td>
+            </tr>
+
+            <tr>
+
+                <td>2</td>
+                <td>Abigail</td>
+                <td>Swimming</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>Bailey</td>
+                <td>Drawing</td>
+            </tr>
+
+            <tr>
+                <td>4</td>
+                <td>Chris</td>
+                <td>Running</td>
+            </tr>
+
+            <tr>
+                <td>5</td>
+                <td>Sherri</td>
+                <td>Tennis</td>
+            </tr>
+
+            <tr>
+                <td>6</td>
+                <td>Rishad</td>
+                <td>Biking</td>
+            </tr>
+
+            <tr>
+                <td>7</td>
+                <td>Michael</td>
+                <td>Basketball</td>
+            </tr>
+
+            <tr>
+                <td>8</td>
+                <td>Larry</td>
+                <td>Video Games</td>
+            </tr>
+
+            <tr>
+                <td>9</td>
+                <td>Andrea</td>
+                <td>Baking</td>
+            </tr>
+
+            <tr>
+                <td>10</td>
+                <td>Sebastian</td>
+                <td>Dancing</td>
+            </tr>
+
+            <tr>
+                <td>11</td>
+                <td>Sarah</td>
+                <td>Painting</td>
+            </tr>
+
+            <tr>
+                <td>12</td>
+                <td>Kyoko</td>
+                <td>Reading</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+</body>
