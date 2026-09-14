@@ -1,0 +1,62 @@
+@import './base.css';
+
+:root {
+  --brand-bg: #f1f7ff;
+  --brand-surface: #ffffff;
+  --brand-surface-soft: #e9f2ff;
+  --brand-primary: #2f6df6;
+  --brand-primary-dark: #1f56cf;
+  --brand-secondary: #5d8bff;
+  --brand-accent: #7ed0ff;
+  --brand-text: #17305d;
+  --brand-muted: #5872a1;
+  --brand-border: #cfe0ff;
+  --brand-danger: #f25f78;
+}
+
+body {
+  background: radial-gradient(circle at 10% 10%, #dff0ff 0%, var(--brand-bg) 38%, #eef4ff 100%);
+  color: var(--brand-text);
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::before {
+  background:
+    radial-gradient(circle at 8% 18%, rgba(47, 109, 246, 0.16) 0 42px, transparent 43px),
+    radial-gradient(circle at 90% 22%, rgba(126, 208, 255, 0.2) 0 54px, transparent 55px),
+    radial-gradient(circle at 82% 80%, rgba(93, 139, 255, 0.14) 0 65px, transparent 66px),
+    radial-gradient(circle at 15% 84%, rgba(47, 109, 246, 0.12) 0 48px, transparent 49px),
+    linear-gradient(30deg, rgba(47, 109, 246, 0.04) 0 2px, transparent 2px 18px);
+  opacity: 0.9;
+}
+
+body::after {
+  content: 'x+y= ?    pi    7x8    sum    12x12';
+  display: grid;
+  align-content: space-between;
+  justify-content: space-between;
+  padding: 4rem 3rem;
+  font-size: clamp(1rem, 1.8vw, 1.5rem);
+  letter-spacing: 0.24rem;
+  font-weight: 700;
+  color: rgba(31, 86, 207, 0.11);
+  white-space: pre;
+}
+
+#app {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
+  font-weight: 500;
+}
