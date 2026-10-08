@@ -1,3 +1,5 @@
+**Content in this folder contains packages not of my own creation. Most of my content lies in the Asset folder of each project**
+
 Projects in this Folder:
 
 
