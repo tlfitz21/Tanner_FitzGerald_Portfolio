@@ -1,0 +1,71 @@
+You are provided with an HTML file containing a pre-styled To-Do list. Some tasks have been pre-added (hardcoded) for you. The buttons and UI have already been designed. Your task is to write a JavaScript file to implement functionality for the buttons and the To-do list UI. You are not required to write any HTML code, but you will need to understand the elements and containers on the page to program them correctly for the desired behavior.
+The HTML file requires an index.js file, which should be included in the <head> element. With this file correctly in place, the To-Do list should function as demonstrated in the attached video.
+Note that the index.html file includes Bootstrap via an external URL, so it will only function correctly if you have an internet connection.
+
+
+Functionality Expected:
+
+1.	Rendering Tasks from Given Data. 
+a.	In the provided JavaScript file, you will have an array of tasks (named tasks). Imagine this array represents data fetched from a server, and your job is to render the tasks on the Bootstrap grid when the document is loaded or when there is any change in the tasks array. Note that index.js is included before the HTML tags are declared, meaning that when the browser reads this JavaScript file, no HTML elements will have been rendered yet.
+b.	Render the entire task data whenever there is any change in the state of the task array. This means the program should remove existing to-do items before rendering them again.
+c.	Note that you are not allowed to modify the HTML file, but the javascript program should dynamically add and remove HTML elements. Do not use innerHTML += [ html string ] syntax. Use document.createElement and appendChild, instead. For user input, you should never use innerHTML. (why?)
+d.	The child elements of <div id='task-list-container'> serve as examples of what needs to be rendered programmatically. However, these elements should be removed as part of the rendering function. All tasks rendered should come only from the tasks array provided in the JavaScript code.
+e.	It should not render any deleted tasks (render only when task.deleted == false).
+f.	If a task is overdue, the entire row for the task should use the bootstrapt class text-danger to make the text appear in red. Please assume that the due date is at the end of the day, not the start. For example, if a due date on the to-do list shows 10/10/2026, it means that the task should NOT be considered overdue until 10/10/2026 11:59:59 PM. 
+g.	If the title is longer than 30 letters, it should be truncated to 25 letters with an ellipsis at the end (three dots → ...)  I already provided a helper function called truncate.
+h.	If dueDate is null, it means that the task does not have a particular due date.
+i.	Even after re-rendering each row, it should retain the same behaviors. For example, when you remove and render it again with a new data structure, you will need to re-attach the event handlers. This may not make sense at first glance, but it will. 
+j.	I recommend including some attributes when rendering HTML Elements tasks. This will be useful later when a user interacts with tasks so that each element can know which element in the task array it should access.  
+k.	I recommend creating a function to render the HTML elements for a single task (two rows), with the task object as its argument. Additionally, create a function that iterates over each task in the tasks array; for example, renderTasks() and renderTask(task). Note that the first function is plural.
+l.	You may also find JavaScript template literals (or HTML templates) useful (link). However, you can create HTML element nodes and set their content (e.g., attributes) or append additional elements.
+m.	Formatting dates can be tricky. Check out the methods of the Date object. Note that the month index starts from 0 (January) rather than 1 (February). The provided js code has a helper function called getFormattedDate
+n.	Optimization: Minimize the number of DOM element searching function calls (e.g., getElementById or querySelector) unless absolutely necessary. Instead, search for an element only once and assign it to a variable. Note that there are some unavoidable cases where you must search multiple times. For each unnecessary element search, 3 points will be deducted.
+2.	Expandable/collapsable note.
+a.	Each item has a collapsible/expandable detailed note that displays the full title and note. Clicking the title should toggle the additional row in the table. Note that the cursor changes to a hand icon due to the role="button" attribute.
+b.	It uses Bootstrap's collapsible feature. As long as the data-bs-target refers to the ID of the collapsible element and you have all the necessary HTML elements (as specified in index.html), it should work without requiring any of your JavaScript code; it uses Bootstrap's built-in JavaScript functionality. Follow the format provided in index.html.
+
+
+●	The following three behaviors will update the value of the main tasks array. While there are many ways to update the view (e.g., only updating the part that has changed), for this assignment, I would like you to always use the same rendering function written for steps 1 and 2 whenever a change occurs. This means that you should NOT individually add or remove HTML elements in response to the updated tasks array; instead, once the tasks array is updated, call the render function. The function should always delete all tasks and re-render everything based on the current state of the array. This approach relates to the MVC pattern.
+
+3.	Completing a task
+a.	The checkbox in front of each item indicates whether the task is completed. 
+b.	If a task is completed, the task name should be displayed with a strikethrough using the Bootstrap <del> tag. Additionally, the row should use the contextual class text-muted to make the row appear gray. 
+c.	When a task is marked as completed, the task's completion date should be set to the current time (refer to the Date object). 
+d.	If the item is unchecked, it should revert to the incomplete state and style, where completed = false and completeDate is set to null.
+4.	Deleting a task
+a.	The trash can icon at the end of each row should delete the to-do item, regardless of its completed state. 
+b.	The program should prompt the user for confirmation before deletion, deleting the task only if they press "OK." 
+c.	In practice, the item should not be removed from the data structure. Instead, set the deleted flag to true, so the program can skip rendering the item based on this flag. (e.g., Do you think social media will delete your data if you delete your account?) 
+d.	Also, you should be able to delete completed tasks by clicking the Delete Completed Tasks button. It should be confirmed before deletion. 
+e.	Delete Completed Tasks button should be enabled only when there are tasks that are completed (checkbox checked) on the web app.
+5.	Adding a new task 
+a.	The Add Task button on the bottom right should open the Bootstrap collapsible container. When the input container appears, the Add Task button should not be displayed anymore. Bootstrap class d-none and toggle function would be useful. 
+b.	Once the task is submitted, it should collapse the task input container and bring back the Add Task button. You can programmatically collapse the input container using Bootstrap (link).
+c.	Once the container is open, there should be three input elements. The Task Title is required. If a user submits the task without a title (e.g., no text or only whitespace in the title), the program should alert the user to enter it. In this case, do not create a task, and leave the modal input form open. The Note is not required.
+d.	If the task due date exists, you should validate the Due Date value entered by the user to ensure that the entered text can create a valid Date object. Only accept dates entered in the mm/dd/yyyy format. Use regular expressions to check if the input is in the correct format and represents a valid date. If the user enters an invalid date in the correct format (e.g., 02/29/2028), they should be alerted, and task submission should not be allowed. Hint: If the date is in the correct format, you can at least create a new Date object. Then you can compare the generated date with the entered date to see if it is in a valid range. For example, if you enter 02/29/2028, the date object generated will be 03/01/2028. You can check if all the month, day, and year values entered are the same as those in the generated date (e.g., 2 == 3, 29 == 1, 2025 == 2028).
+e.	Note that the value entered in the textarea can include line breaks (\r\n). Ensure that the generated note retains these line breaks. In this case, you can use innerHTML, and the replace function will be useful as you can replace the linebreaks with <br>.
+f.	Use the createdDate property in the data structure to store the timestamp. Note that if someone enters 12-31-2024, it means that the actual due date is 12-31-2024 23:59:59, not 12-31-2024 00:00:00. Otherwise, overdue tasks will not be displayed correctly. (i.e., a task due on 10/15/2024 should not appear in red on 10/15/2024). 
+g.	If the user cancels the action, there should be no change in the data, and the modal window should be closed.
+h.	You should create an element in the tasks array with a unique index (the array length should be useful). The tasks should be rendered in the order of their elements in the array. The modal window should always be empty when you open it; no information should remain from previous inputs.
+i.	You should be diligent about sanity checks in general. Do not allow garbage data to be uploaded to a server.
+
+●	The following behavior does NOT change the data structure array but changes the view based on user input, which you can consider a local change. You can hide some elements whenever necessary, but they should not re-render the tasks.
+
+6.	Overdue
+a.	Using the Overdue button, a user can see only the overdue tasks (i.e., tasks for which the due date has passed and the task is incomplete). 
+b.	Use the text-danger class to indicate the current state (on/off) of the Overdue button. If the overdue button is on, it should appear in red using the text-danger class. Note that the <a> element is the one to which you want to add the text-danger class.  The this keyword and firstChild will be useful, and so will toggle. 
+c.	If the overdue filter is active and a user adds a new task, that should change the overdue status (e.g., make the overdue filter inactive)
+d.	Note that the rendering function that you wrote should “know” the necessary elements from the behavior. If the Overdue button is active, the rendering function should still render task elements that are NOT overdue but should hide them) Bootstrap class d-none would be useful. (link)
+7.	Emailing a task
+a.	Using the Email button, one should be able to send an email with a subject (task title) and the body of the email (task note). (Hint: link, link2)
+b.	Make sure that each email's content will vary per to-do item. 
+8.	Bootstrap
+a.	Note that we do not use any style attributes or css syntax in HTML. 
+b.	You are NOT allowed to use CSS or style attributes in javascript either. Use Bootstrap. 
+c.	There should be no discrepancy in terms of style (between video and your submission).
+d.	Note that it is using Bootstrap Grid and Containers so it should be responsive (you do not have to do anything to make it responsive.) 
+
+Notes
+●	Do NOT revise the HTML file.
+●	This will be tested in the most recent chrome
+●	Do not use add any style attributes or event attributes (such as onclick).

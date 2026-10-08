@@ -1,0 +1,25 @@
+log_base_2 of 746 = 9
+2 ^ 2 = 4
+find SMALLEST 5 -4 -9 13 1 0 -30 28 49 is -30
+6 ^ 4 = 1296
+find BIGGEST 37 28 -41 46 15 3 is 46
+log_base_2 of 846 = 9
+find SMALLEST -49 -9 -20 5 -7 48 is -49
+log_base_2 of 978 = 9
+5 ^ 2 = 25
+1 ^ 0 = 1
+log_base_2 of 573 = 9
+7 ^ 4 = 2401
+5 ^ 4 = 625
+3 ^ 2 = 9
+log_base_2 of 997 = 9
+log_base_2 of 761 = 9
+log_base_2 of 988 = 9
+find BIGGEST 8 -6 37 43 16 is 43
+2 ^ 3 = 8
+find SMALLEST -27 -49 -21 5 -17 32 5 is -49
+log_base_2 of 533 = 9
+find BIGGEST 9 -33 26 -26 39 20 16 47 is 47
+log_base_2 of 867 = 9
+0 ^ 0 = 1
+find BIGGEST 0 -43 -12 1 -21 25 37 4 is 37

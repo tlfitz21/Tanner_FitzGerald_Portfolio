@@ -1,0 +1,25 @@
+log 746
+power 2 2
+find SMALLEST 5 -4 -9 13 1 0 -30 28 49
+power 6 4
+find BIGGEST 37 28 -41 46 15 3
+log 846
+find SMALLEST -49 -9 -20 5 -7 48
+log 978
+power 5 2
+power 1 0
+log 573
+power 7 4
+power 5 4
+power 3 2
+log 997
+log 761
+log 988
+find BIGGEST 8 -6 37 43 16
+power 2 3
+find SMALLEST -27 -49 -21 5 -17 32 5
+log 533
+find BIGGEST 9 -33 26 -26 39 20 16 47
+log 867
+power 0 0
+find BIGGEST 0 -43 -12 1 -21 25 37 4

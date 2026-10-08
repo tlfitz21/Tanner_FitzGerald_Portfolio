@@ -1,0 +1,201 @@
+body {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    max-width: 1200px;
+    min-width: 800px;
+    background-color: rgb(236, 239, 241);
+    margin: 20px auto;
+    overflow-x: auto;
+    
+}
+
+header{
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#banner{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    text-align: center;
+    background-color: #E5751F;
+    border: solid black;
+    border-radius: 5px;
+}
+
+.logo {
+    height: 100px;
+}
+
+.navigation-bar ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.navigation-bar a{
+    color: black;
+    text-decoration: none;
+}
+
+.navigation-bar li{
+    margin-right: 15px;
+}
+
+.menu-bar-item{
+    font-size: 1.4em;
+    margin: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu-bar-item:hover{
+    background-color: #861F41;
+    color: #E5751F;
+    border: solid black;
+    border-width: 3px;
+}
+
+.header-container{
+    position: relative;
+    
+}
+
+.primelab-framework{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.header-title-container{
+    position: absolute;
+    left: 40px;
+    top: 150px;
+    max-width: 600px;
+}
+
+.header-title{
+    color: white;
+    font-size: 100px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+section{
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 50px;
+    line-height: 1.8;
+}
+
+.section-title{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container-banner{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20%;
+    min-width: 200px;
+    border: solid black;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #861F41;
+    text-align: center;
+}
+
+.container-banner a{
+    color: white;
+    text-decoration: none;
+}
+
+.fast-facts-image{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.image-on-the-left{
+    display: flex;
+    gap: 20px;
+}
+
+.image-on-the-left img{
+    width: 50%;
+    border-radius: 10px;
+}
+
+.image-on-the-right{
+    display: flex;
+    gap: 20px;
+}
+
+.image-on-the-right img{
+    width: 50%;
+    border-radius: 10px;
+}
+
+.role{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.role-members{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0px;
+}
+
+.member{
+    width: 33%;
+    max-width: 240px;
+    margin: 5px;
+    text-align: center;
+}
+
+#project-articles{
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    gap: 2%;
+    margin: 20px;
+    min-width: 800px;
+}
+
+.project-container{
+    border: 4px solid rgb(226, 226, 226);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.project-title{
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.project-image{
+    width: 80%;
+    margin: 0 10%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+footer{
+    background-color: #861F41;
+    text-align: right;
+    padding: 20px;
+}
